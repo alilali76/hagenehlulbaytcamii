@@ -74,6 +74,11 @@ document.addEventListener("DOMContentLoaded", function () {
             contactForm.style.display = 'none';
         }, 300);
         
+        // Questions Cards wieder einblenden
+        questionsCards.style.display = 'grid';
+        questionsCards.style.opacity = '1';
+        questionsCards.style.transform = 'translateY(0)';
+        
         // Modal anzeigen
         document.getElementById('confirmation-modal').classList.add('show');
     });
