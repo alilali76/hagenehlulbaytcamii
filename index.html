@@ -8,7 +8,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -25,12 +25,12 @@
             </div>
 
             <nav>
-                <a href="#">Start</a>
-                <a href="#">Gebetszeiten</a>
-                <a href="#">Events</a>
-                <a href="#">Programme</a>
-                <a href="#">Fragen</a>
-                <a href="#">Kontakt</a>
+                <a href="#start">Start</a>
+                <a href="#gebetszeiten">Gebetszeiten</a>
+                <a href="#events">Events</a>
+                <a href="#programme">Programme</a>
+                <a href="#fragen">Fragen</a>
+                <a href="#kontakt">Kontakt</a>
             </nav>
 
             <button class="menu-toggle" aria-label="Menü öffnen">
@@ -41,8 +41,23 @@
         </div>
     </header>
 
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <nav class="sidebar-nav">
+            <a href="#start">Start</a>
+            <a href="#gebetszeiten">Gebetszeiten</a>
+            <a href="#events">Events</a>
+            <a href="#programme">Programme</a>
+            <a href="#fragen">Fragen</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </div>
+
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="start">
         <div class="container hero-inner">
             <h1>
                 Hagen Ehlulbayt Camii<br>
@@ -54,16 +69,41 @@
             gemeinsames Lernen und ein respektvolles Miteinander in Hagen.
             </p>
 
-            <div class="hero-actions">
-                <a href="#" class="btn-primary">Aktuelle Events</a>
-                <a href="#" class="btn-secondary">Frage stellen</a>
+            <div class="hero-overview">
+                <a href="#gebetszeiten" class="overview-card">
+                    <h3>Gebetszeiten</h3>
+                    <p>Aktuelle Gebetszeiten.</p>
+                </a>
+                <a href="#programme" class="overview-card">
+                    <h3>Programme</h3>
+                    <p>Regelmäßige Angebote für Kinder, Jugendliche und Erwachsene.</p>
+                </a>
+                <a href="#events" class="overview-card">
+                    <h3>Events</h3>
+                    <p>Anstehende Veranstaltungen, Vorträge und gemeinschaftliche Aktivitäten.</p>
+                </a>
+                <a href="#fragen" class="overview-card">
+                    <h3>Fragen & Kontakt</h3>
+                    <p>Kontaktformular um mit uns in Kontakt zu treten.</p>
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- Prayer Times -->
+    <section id="gebetszeiten">
+        <div class="container">
+            <div class="prayer-box">
+                <p>
+                    Die aktuellen Gebetszeiten finden Sie auf unserer Seite www.namazsaat.de.
+                </p>
+                <a href="https://www.namazsaat.de" target="_blank">Zu den Gebetszeiten</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Events -->
-    <section>
+    <section id="events">
         <div class="container">
             <h2>Aktuelle Events</h2>
             <p class="section-intro">
@@ -71,57 +111,103 @@
                 Vorträge und gemeinschaftliche Aktivitäten.
             </p>
 
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Freitagsvortrag</h3>
-                    <p>Wöchentlicher Vortrag nach dem Freitagsgebet.</p>
-                </div>
-                <div class="card">
-                    <h3>Jugendabend</h3>
-                    <p>Austausch, Lernen und Gemeinschaft für Jugendliche.</p>
-                </div>
-                <div class="card">
-                    <h3>Familientag</h3>
-                    <p>Gemeinsame Aktivitäten für Groß und Klein.</p>
-                </div>
+            <div id="events-container" class="events-grid">
+                <!-- Events werden hier dynamisch mit JavaScript eingefügt -->
             </div>
         </div>
     </section>
 
     <!-- Programmes -->
-    <section>
+    <section id="programme">
         <div class="container">
             <h2>Unsere Programme</h2>
             <p class="section-intro">
                 Bildungs- und Gemeinschaftsangebote für alle Altersgruppen.
             </p>
 
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Kinderprogramme</h3>
-                    <p>Spielerisches Lernen und altersgerechte Bildung.</p>
-                </div>
-                <div class="card">
+            <div class="programmes-grid">
+                <article class="programme-card">
+                    <h3>Freitagsgebet</h3>
+                    <p>Wöchentliche Freitagsprädigt mit anschließendem Freitagsgebet. Ein fester Bestandteil unserer Gemeinschaft.</p>
+                </article>
+                <article class="programme-card">
                     <h3>Jugendprogramme</h3>
-                    <p>Raum für Fragen, Austausch und persönliche Entwicklung.</p>
-                </div>
+                    <p>Raum für Fragen, Austausch und persönliche Entwicklung für Jugendliche jeden Sonntagabend.</p>
+                </article>
+                <article class="programme-card">
+                    <h3>Kinderprogramme</h3>
+                    <p>Spielerisches Lernen der islamsichen Grundlagen und des Quran und altersgerechte Bildung für unsere jüngsten Mitglieder.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fragen -->
+    <section id="fragen">
+        <div class="container">
+            <h2>Fragen</h2>
+            <p class="section-intro">
+                Haben Sie Fragen zu unserem Glauben, unseren Programmen oder unserer Gemeinschaft? Hier finden Sie Antworten auf häufig gestellte Fragen oder nehmen Sie direkt Kontakt mit uns auf.
+            </p>
+
+            <div class="card-grid" id="questions-cards">
                 <div class="card">
-                    <h3>Bildungsangebote</h3>
-                    <p>Kurse und Vorträge zu islamischen Themen.</p>
+                    <h3>Fragen & Kontakt</h3>
+                    <p>Haben Sie Fragen zu unserem Glauben oder brauchen Sie eine Beratung? Stellen Sie Ihre Frage direkt über unser Kontaktformular oder vereinbaren Sie einen Termin.</p>
+                    <a href="#" class="btn-secondary" data-action="contact">Frage stellen oder Termin vereinbaren</a>
+                </div>
+            </div>
+
+            <div id="contact-form" class="contact-form-container">
+                <form id="moschee-contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ihr Anliegen</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Senden</button>
+                </form>
+            </div>
+
+            <!-- Confirmation Modal -->
+            <div id="confirmation-modal" class="modal">
+                <div class="modal-content">
+                    <p>Sie werden zu Ihrer E-Mail-App weitergeleitet. Vielen Dank für Ihre Anfrage!</p>
+                    <button id="modal-ok-btn" class="btn-primary">OK</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Prayer Times -->
-    <section>
+    <!-- Kontakt -->
+    <section id="kontakt">
         <div class="container">
-            <div class="prayer-box">
-                <p>
-                    Die aktuellen Gebetszeiten finden Sie auf unserer
-                    separaten Gebetszeiten-Seite.
-                </p>
-                <a href="#">Zu den Gebetszeiten</a>
+            <h2>Kontakt</h2>
+            <p class="section-intro">
+                Wir freuen uns auf Ihren Besuch oder Ihre Nachricht. Hier finden Sie alle wichtigen Kontaktinformationen.
+            </p>
+
+            <div class="contact-grid">
+                <a href="https://maps.google.com/?q=Ahl+Al-Bayt+Moschee+Hagen+Düppelstr+26+58097+Hagen" target="_blank" class="contact-link">
+                    <div class="contact-item address">
+                        <h3>Adresse</h3>
+                        <p>Ahl Al-Bayt Moschee Hagen<br>
+                        Düppelstr 26<br>
+                        58097 Hagen<br>
+                        Deutschland</p>
+                    </div>
+                </a>
+                <div class="contact-item">
+                    <h3>E-Mail</h3>
+                    <p><a href="mailto:info@hagen-ehlulbayt-camii.de">info@hagen-ehlulbayt-camii.de</a></p>
+                </div>
             </div>
         </div>
     </section>
@@ -130,10 +216,12 @@
     <footer>
         <div class="container">
             <p>
-                © 2025 Moschee - Zentrum für Gebet und Gemeinschaft
+                © 2025 Ahl Al-Bayt Moschee Hagen
             </p>
         </div>
     </footer>
 
+    <script src="js/events.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
