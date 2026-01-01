@@ -1,5 +1,5 @@
 // Event-Daten: Array von Objekten mit title, date (ISO), description
-// Einfach Events hinzufügen oder entfernen durch Bearbeiten dieses Arrays
+// Einfach Veranstaltungen hinzufügen oder entfernen durch Bearbeiten dieses Arrays
 window.eventsData = [
     {
         title: "Gemeinsames Frühstück",
@@ -23,12 +23,12 @@ window.eventsData = [
     }
 ];
 
-// Funktion zum Rendern der Events
+// Funktion zum Rendern der Veranstaltungen
 window.renderEvents = function() {
     const eventsContainer = document.getElementById('events-container');
     const now = new Date();
 
-    // Filtere nur zukünftige Events
+    // Filtere nur zukünftige Veranstaltungen
     const futureEvents = window.eventsData.filter(event => new Date(event.date) > now);
 
     // Sortiere nach Datum (früheste zuerst)
@@ -38,7 +38,7 @@ window.renderEvents = function() {
     eventsContainer.innerHTML = '';
 
     if (futureEvents.length === 0) {
-        eventsContainer.innerHTML = '<p class="no-events">Derzeit keine anstehenden Events. Bleiben Sie dran!</p>';
+        eventsContainer.innerHTML = '<p class="no-events">Derzeit keine anstehenden Veranstaltungen. Bleiben Sie dran!</p>';
         return;
     }
 

@@ -22,10 +22,19 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.classList.remove('active');
     });
 
-    // Rendere Events beim Laden der Seite
+    // Rendere Veranstaltungen beim Laden der Seite
     if (typeof window.renderEvents === 'function') {
         window.renderEvents();
     }
+
+    // Parallax Effect for Hero Background
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const heroBackground = document.querySelector('.hero-background');
+        if (heroBackground) {
+            heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+    });
 
     // Contact Form Toggle
     const questionButtons = document.querySelectorAll('.btn-secondary[data-action]');
@@ -60,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
         
-        const subject = 'Kontaktformular Hagen Ehlulbayt Camii';
+        const subject = 'Kontaktformular Ahl Al-Bayt Moschee Hagen';
         const body = `Name: ${name}\nE-Mail: ${email}\n\nNachricht:\n${message}`;
         
         const mailto = `mailto:alialtan2002@outlook.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

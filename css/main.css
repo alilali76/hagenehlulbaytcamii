@@ -1,9 +1,9 @@
 :root {
   --color-primary: #1E3A5F;
-  --color-primary-light: #E8EFF7;
+  --color-primary-light: #d4eafd;
   --color-bg: #F9FBFA;
   --color-text: #1F2933;
-  --color-muted: #6B7280;
+  --color-muted: #202020;
   --color-accent: #C8A951;
 
   --max-width: 1200px;
@@ -40,8 +40,9 @@ a {
 
 /* Header */
 header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  background: #ffffffb3;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e3e3e3;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -51,7 +52,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 70px;
 }
 
 .brand {
@@ -76,6 +77,7 @@ header {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  border-radius: 20px;
 }
 
 .brand-name {
@@ -86,7 +88,7 @@ header {
 }
 
 
-[ LOGO ]  Hagen Ehlulbayt Camii
+[ LOGO ]  Ahl Al-Bayt Moschee Hagen
 
 .logo {
   font-weight: 600;
@@ -99,7 +101,7 @@ nav a {
   margin-left: 28px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-muted);
+  color: var(--color-primary);
   position: relative;
 }
 
@@ -200,39 +202,57 @@ nav a:hover::after {
 
 /* Hero */
 .hero {
-  background: linear-gradient(
-    180deg,
-    var(--color-primary-light) 0%,
-    #ffffff 100%
-  );
-  padding: 120px 0 100px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/Deckblatt.jpg') center/cover no-repeat;
+  transform: translateZ(0);
+  will-change: transform;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 3;
   max-width: 800px;
+  color: #ffffff;
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-size: 48px;
   line-height: 1.2;
-  color: var(--color-primary);
-  margin-bottom: 24px;
-}
-
-.hero h1 span {
-  display: block;
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--color-muted);
-  margin-top: 8px;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-  font-size: 17px;
-  color: var(--color-muted);
-  margin-bottom: 40px;
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .hero-actions {
@@ -365,12 +385,19 @@ section p.section-intro {
     font-size: 18px;
 }
 
+.program-time {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 14px;
+    margin: 4px 0 8px 0;
+}
+
 .programme-card p {
-    color: var(--color-muted);
+    color: #374151;
     font-size: 14px;
 }
 
-/* Events */
+/* Veranstaltungen */
 .events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -390,7 +417,7 @@ section p.section-intro {
 }
 
 .event-card .event-date {
-    color: var(--color-accent);
+    color: #003bbd;
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 8px;
@@ -464,22 +491,29 @@ section p.section-intro {
     background: var(--color-primary);
     color: #ffffff;
     border-radius: var(--radius);
-    padding: 48px;
+    padding: 48px 64px;
+    min-height: 300px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.prayer-box h2 {
+    font-size: 48px;
+    margin-bottom: 16px;
+    font-weight: 600;
 }
 
 .prayer-box p {
-    margin: 0;
+    margin: 0 0 24px 0;
     font-size: 16px;
     max-width: 500px;
 }
 
 .prayer-box a {
-    margin-top: 16px;
-    background: #ffffff;
+    background: var(--color-primary-light);
     color: var(--color-primary);
     padding: 12px 24px;
     border-radius: var(--radius);
@@ -539,6 +573,16 @@ footer p {
 
   .hero h1 span {
     font-size: 18px;
+  }
+
+  .hero-overview {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .overview-card {
+    padding: 20px;
   }
 
   .hero-overview {
